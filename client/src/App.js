@@ -8,6 +8,8 @@ import { GET_ALL_USERS } from './query/user';
 function App() {
   const { data, loading, error } = useQuery(GET_ALL_USERS)
   const [users, setUsers] = useState([])
+  const [username, setUsername] = useState('')
+  const [age, setAge] = useState(0)
 
   useEffect(() => {
     if (!loading) {
@@ -21,8 +23,8 @@ function App() {
   return (
     <div>
       <form>
-        <input type="text" />
-        <input type="number" />
+        <input value={username} onChange={e => SetUsername(e.target.value)} type="text" />
+        <input value={age} onChange={e => SetAge(e.target.value)} type="number" />
         <div className='button'>
           <button>Create</button>
           <button>Receive</button>
