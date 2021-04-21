@@ -24,6 +24,15 @@ input PostInput {
     title: String!
     content: String!
 }
+type Query {
+    getAllUsers: [User]
+    getUser(id:ID): User
+    
+}
+type Mutation {
+    createUser(input: UserInput): User
+}
+
 
 `);
 
